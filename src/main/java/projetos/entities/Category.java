@@ -3,7 +3,9 @@ package projetos.entities;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_category")
@@ -16,7 +18,8 @@ public class Category implements Serializable {
     private Long id;
     private String name;
 
-
+    @Transient
+    private Set<Product> products = new HashSet<>();
 
     public Category(Long id, String name) {
         this.id = id;
@@ -25,7 +28,7 @@ public class Category implements Serializable {
 
     public Category() {}
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -41,6 +44,9 @@ public class Category implements Serializable {
         this.name = name;
     }
 
+    public Set<Product> getProducts() {
+        return products;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -54,6 +60,7 @@ public class Category implements Serializable {
     public int hashCode() {
         return Objects.hashCode(id);
     }
+
 
 
 }
