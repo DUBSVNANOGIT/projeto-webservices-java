@@ -1,4 +1,4 @@
-package entities;
+package projetos.entities;
 
 import java.io.Serializable;
 import java.util.Objects;
