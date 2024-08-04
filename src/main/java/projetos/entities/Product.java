@@ -23,7 +23,8 @@ public class Product implements Serializable {
 
     //set representa um conjunto, garante que não haverá um produto com mais de uma ocorrencia de categoria
     //foi instanciada para garantir que a mesma não comece valendo nula e sim vazia
-    @Transient
+    @ManyToMany
+    @JoinTable(name = "tb_product_category", joinColumns = @JoinColumn(name = "product_id "), inverseJoinColumns = @JoinColumn(name = "category_id"))
     private Set<Category> categories = new HashSet<>();
 
     public Product(Long id, String name, String description, Double price, String imgUrl) {
