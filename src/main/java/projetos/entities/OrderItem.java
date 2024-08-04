@@ -20,18 +20,22 @@ public class OrderItem implements Serializable {
     private Integer quantity;
     private Double price;
 
+    public OrderItem() {
+    }
+
     public OrderItem(Order order, Product product, Integer quantity, Double price) {
+        super();
         id.setOrder(order);
         id.setProduct(product);
         this.quantity = quantity;
         this.price = price;
     }
 
-    //plataforma EE conta muito com o GET
     @JsonIgnore
-    public Order getOrder(){
+    public Order getOrder() {
         return id.getOrder();
     }
+
     public void setOrder(Order order) {
         id.setOrder(order);
     }
@@ -42,9 +46,6 @@ public class OrderItem implements Serializable {
 
     public void setProduct(Product product) {
         id.setProduct(product);
-    }
-
-    public OrderItem() {
     }
 
     public Integer getQuantity() {
