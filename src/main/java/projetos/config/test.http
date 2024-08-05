@@ -1,7 +1,8 @@
-GET http://localhost:8080/products/1
+GET http://localhost:8080/products/3
 
 ###
 GET http://localhost:8080/orders/1
+
 
 ###
 GET http://localhost:8080/products
