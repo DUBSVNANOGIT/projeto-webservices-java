@@ -1,3 +1,17 @@
+GET http://localhost:8080/users/1
+Accept: application/json
+
+###
+PUT http://localhost:8080/users/1
+Content-Type: application/json
+
+{
+  "name" : "Bob Borown",
+  "email" : "bob@gmail.com",
+  "phone": "977777777"
+}
+
+###
 POST http://localhost:8080/users
 Content-Type: application/json
 
